@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      table#siparisTable,
+      table#siparisTable th,
+      table#siparisTable td {
+        border: 1px solid black;
+      }
+
+      table#siparisTable {
+        background-color: lightyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="Onayla(event)">
+      <h1>Kişisel Bilgiler</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td><label for="name">Adınız:</label></td>
+            <td><input type="text" id="name" name="name" /></td>
+          </tr>
+          <tr>
+            <td><label for="surname">Soyadınız:</label></td>
+            <td><input type="text" id="surname" name="surname" /></td>
+          </tr>
+          <tr>
+            <td><label for="birthDate">Doğum Tarihiniz:</label></td>
+            <td><input type="date" id="birthDate" name="birthDate" /></td>
+          </tr>
+          <tr>
+            <td><label for="email">Mail adresiniz:</label></td>
+            <td><input type="email" id="email" name="email" /></td>
+          </tr>
+          <tr>
+            <td><label for="phone">Telefon:</label></td>
+            <td><input type="tel" id="phone" name="phone" /></td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <hr />
+      
+      <h1>Sipariş Bilgileri</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td><label for="color">Tshirt rengi:</label></td>
+            <td><input type="color" id="color" name="color" /></td>
+            <tr>
+              <td><label for="color">Yazı Rengi:</label></td>
+              <td><input type="color" id="color" name="color" /></td>
+            </tr>
+           
+          </tr>
+          <tr>
+            <td><label for="name">Tshirt üzerinde yazacak yazıyı girin:</label></td>
+            <td><input type="text" id="name" name="name" /></td>
+          </tr>
+          <tr>
+            <td><label for="surname">Tshirt adedi:</label></td>
+            <td><input type="text" id="surname" name="surname" /></td>
+          </tr>
+          <tr>
+            <td><label for="range">Beden Seçiniz:</label></td>
+            <td>
+              <input
+                type="range"
+                id="range"
+                name="range"
+                min="0"
+                max="5"
+                step="1"
+                list="steplist"
+              />
+              <datalist id="steplist">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </datalist>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <button type="button" onclick="secClick()">Seç</button>
+              <input type="text" id="beden" name="beden" disabled />
+            </td>
+          </tr>
+         
+          
+        </tbody>
+      </table>
+      <hr />
+      
+      <h1>Teslimat Bilgileri</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td><label for="adres">Adres:</label></td>
+            <td>
+              <textarea id="adres" name="adres" rows="1" cols="20"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="date">Tarih aralıgı:</label></td>
+            <td><input type="week" id="date" name="date" /></td>
+          </tr>
+         
+        </tbody>
+      </table>
+
+
+    
+
+    <h1 id="sonuc"></h1>
+    <hr />
+    
+    <h1>Ödeme Bilgileri</h1>
+        <table>
+          <tbody>
+              <tr>
+                <td> <label for="fullName">Ad Soyad:</label></td>
+                <td><input type="text" id="fullName" name="fullName" required><br><br></td>
+              </tr>
+              <tr>
+               
+                <td><label for="cardNumber">Kart Numarası:</label></td>
+                <td><input type="text" id="cardNumber" name="cardNumber" required><br><br></td>
+              </tr>
+              <tr>
+              
+                <td><label for="birthDate">Son Kullanma Tarihi:</label></td>
+                <td><input type="date" id="birthDate" name="birthDate" /></td>
+              </tr>
+              <tr>
+                <td><label for="cvv">CVV:</label></td>
+                <td><input type="text" id="cvv" name="cvv" required><br><br></td>
+              </tr>
+              <tr> <td><input type="submit" value="Onayla" /</td>
+              </tr>
+                
+                
+           
+            
+            <script src="payment.js"></script>
+        
+          </tbody>
+          
+        </table>
+      
+        <hr />
+
+      <table id="siparisTable">
+        <thead>
+          <tr>
+            <th colspan="3">SİPARİŞ ONAY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="5">Kişisel Bilgiler</th>
+            <td>Ad:</td>
+            <td><input type="text" id="tname" disabled /></td>
+          </tr>
+          <tr>
+            <td>Soyad:</td>
+            <td><input type="text" id="tsurname" disabled /></td>
+          </tr>
+          <tr>
+            <td>Doğum Tarihi:</td>
+            <td><input type="text" id="tbirtDate" disabled /></td>
+          </tr>
+          <tr>
+            <td>Mail Adresi:</td>
+            <td><input type="text" id="temail" disabled /></td>
+          </tr>
+          <tr>
+            <td>Telefon:</td>
+            <td><input type="text" id="tphone" disabled /></td>
+          </tr>
+        </tbody>
+        
+        <tbody>
+          <tr>
+            <th rowspan="5">Sipariş Bilgileri</th>
+            <td>Tshirt Rengi:</td>
+            <td><input type="text" id="tcolor" disabled /></td>
+          </tr>
+          <tr>
+            <td>Yazı Rengi:</td>
+            <td><input type="text" id="tcolor" disabled /></td>
+          </tr>
+          <tr>
+            <td>Yazı:</td>
+            <td><input type="text" id="tname" disabled /></td>
+          </tr>
+          <tr>
+            <td>Tshirt Adedi:</td>
+            <td><input type="text" id="trange" disabled /></td>
+          </tr>
+          <tr>
+            <td>Tshirt Bedeni:</td>
+            <td><input type="text" id="tbeden" disabled /></td>
+          </tr>
+          
+        </tbody>
+        <tbody>
+          <tr>
+            <th rowspan="5">Teslimat Bilgileri</th>
+            <td>Adres:</td>
+            <td><input type="text" id="tadres" disabled /></td>
+          </tr>
+          <tr>
+            <td>Teslim Tarihi:</td>
+            <td><input type="text" id="tdate" disabled /></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th rowspan="5">Teslimat Bilgileri</th>
+            <td>Ad Soyad:</td>
+            <td><input type="text" id="tcolor" disabled /></td>
+          </tr>
+          <tr>
+            <td>Kart Numarası:</td>
+            <td><input type="text" id="tcolor" disabled /></td>
+          </tr>
+          <tr>
+            <td>Son Kullanma Tarihi:</td>
+            <td><input type="text" id="tname" disabled /></td>
+          </tr>
+          <tr>
+            <td>CVV:</td>
+            <td><input type="text" id="trange" disabled /></td>
+          </tr>
+          
+        </tbody>
+        
+      </table>
+
+      
+      <button type="button" onclick="placeOrder()">Siparişi Onayla</button>
+    </form>
+    <h1 id="sonuc"></h1>
+    <script>
+      function Onayla(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        const name = data.name;
+        const surname = data.surname;
+        const birthDate = data.birthDate;
+        const email = data.email;
+        const phone = data.phone;
+        document.getElementById("tname").value = name;
+        document.getElementById("tsurname").value = surname;
+        document.getElementById("tbirtDate").value=birthDate;
+        document.getElementById("temail").value=email;
+        document.getElementById("tphone").value=phone;
+      }
+    </script>
+    <h1 id="sonuc"></h1>
+     <script>
+      function secClick() {
+        const range = document.getElementById("range");
+        const beden = document.getElementById("beden");
+        const bedenler = ["XS", "S", "M", "L", "XL", "XXL"];
+        beden.value = bedenler[range.value];
+      }
+
+      function Onayla(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        const color = data.color;
+        const range = data.range;
+        document.getElementById("tname").value = name;
+        document.getElementById("tcolor").value = color;
+        document.getElementById("trange").value = range;
+        document.getElementById("tbeden").value = beden;
+        const beden = document.getElementById("beden").value;
+        document.getElementById(
+          "sonuc"
+        
+        ).innerText = `Renk: ${color}, beden: ${beden}`;
+       
+      }
+    </script>
+    <script>
+      function Onayla(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        const adres = data.adres;
+        const date = data.date;
+        document.getElementById("tadres").value=adres;
+        document.getElementById("tdate").value=date;
+        document.getElementById("sonuc").innerText = adres + " " + date;
+      }
+    </script>
+
+    <script>
+      document.getElementById("paymentForm").addEventListener("submit", function Onayla(event) {
+    event.preventDefault();
+    
+    var fullName = document.getElementById("fullName").value;
+    var cardNumber = document.getElementById("cardNumber").value;
+    var expiryDate = document.getElementById("expiryDate").value;
+    var cvv = document.getElementById("cvv").value;
+    
+    console.log("Ad Soyad: " + fullName);
+    console.log("Kart Numarası: " + cardNumber);
+    console.log("Son Kullanma Tarihi: " + expiryDate);
+    console.log("CVV: " + cvv);
+    
+  
+    alert("Ödeme başarıyla tamamlandı!");
+});
+    </script>
+  </body>
+  
+
+</html>
